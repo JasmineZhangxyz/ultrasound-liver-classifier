@@ -12,9 +12,9 @@ This project performs liver detection for Clarius transducer ultrasound scans us
 ## Data
 
 #### We investigated three types of datasets: 
-1. Self-collected Clarius Transducer scans (~5K scans)
+1. Self-collected Clarius Transducer scans (~7K scans)
 2. Augmented self-collected Clarius Transducer scans (~30K scans)
-3. Augmented self-collected Clarius Transducer scans with Augmented External datasets. (~ __K scans)
+3. Augmented self-collected Clarius Transducer scans with Augmented External datasets. (~ 35K scans)
    
 #### Data Augmentation
 
