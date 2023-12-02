@@ -7,14 +7,14 @@ This project performs liver detection for Clarius transducer ultrasound scans us
 - Sophie Lee ()
 - Allan Ma ()
 - Nicole Streltsov ([@NicStrel](https://github.com/NicoleStrel])) 
-- Jasmine Zhang ()
+- Jasmine Zhang ([@JasmineZhangxyz](https://github.com/JasmineZhangxyz))
 
 ## Data
 
 #### We investigated three types of datasets: 
-1. Self-collected Clarius Transducer scans
-2. Augmented self-collected Clarius Transducer scans
-3. Augmented self-collected Clarius Transducer scans with Augmented External datasets.
+1. Self-collected Clarius Transducer scans (~5K scans)
+2. Augmented self-collected Clarius Transducer scans (~30K scans)
+3. Augmented self-collected Clarius Transducer scans with Augmented External datasets. (~ __K scans)
    
 #### Data Augmentation
 
