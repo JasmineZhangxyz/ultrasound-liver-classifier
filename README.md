@@ -9,6 +9,18 @@ This project performs liver detection for Clarius transducer ultrasound scans us
 - Nicole Streltsov ([@NicStrel](https://github.com/NicoleStrel])) 
 - Jasmine Zhang ([@JasmineZhangxyz](https://github.com/JasmineZhangxyz))
 
+## Local Running
+
+
+To download the required dependencies,
+
+- Create an environment via `python -m venv venv`
+- Active the environment with `venv\Scripts\activate` (Windows) or `source venv/bin/activate` (MacOS, UNIX)
+- Install dependencies with `pip install requirements.txt`
+
+Note that this project is highly reliant on using CUDA (GPU) - recommended.
+To download the data necessary for training and evaluating, download the .npz file from [here](https://drive.google.com/file/d/13zsG_NFNqz4I6AA0cOJTdWWsr4bWrBr3/view?usp=sharing) and upload it to `(this repository)/data/` folder. 
+
 ## Data
 
 #### We investigated three types of datasets: 
@@ -34,6 +46,8 @@ We performed translation, rotation, cropping, contrast, Gaussian noise - where t
 
 - `Liver_SVM.ipynb`: 
 - `Liver_CNN.ipynb`: Simple CNN with 2 Convolutional Layers (with ReLU activation, 2x2 Max-Pooling) with 3x3 kernel, 30% Dropout Layer, and 2 Fully-Connected Layers. We use an Adam optimizer and Cross Entropy Loss function for training. This Notebook also includes attention map visualizations to identify how the model recognizes liver features. 
+
+- the `/models` folder holds saved models for loading.
 
 ## Helper Functions
 
