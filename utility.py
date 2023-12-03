@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc, confusion_matrix
+from sklearn.metrics import roc_curve, auc, confusion_matrix, precision_recall_fscore_support
 import time
 from memory_profiler import memory_usage
-from numpy import np
+import numpy as np
+import torch
 
 def get_memory_usage_and_runtime(function, arguments):
     '''
@@ -23,7 +24,7 @@ def get_memory_usage_and_runtime(function, arguments):
 
 def auc_roc_curves(y_data, title):
     '''
-    Plots multiple AUC_ROC_curves
+    Plots multiple AUC_ROC curves
 
     :@param y_data (list) of y_test (numpy array), y_pred (numpy array), color (string), label (string)
     :@param title (string)
@@ -69,3 +70,44 @@ def create_confusion_matrix(y_test, y_pred, title=""):
             ax.text(j, i, str(confusion_mat[i, j]),
                     ha='center', va='center', color='white')
     plt.show()
+
+def get_test_outputs(x_test, model):
+  '''
+  Gets the test outputs from the CNN model.
+
+  :@param x_test: Test set images
+  :@param model: CNN model
+  :@return test_outputs torch vector
+  '''
+  model.eval() # set model to evaluation mode
+
+  with torch.no_grad():
+      test_outputs = model(x_test)
+
+  return test_outputs
+
+def get_metrics(x_test, y_test, model):
+  '''
+  Collect metrics: accuracy, runtime, peak memory usage, test outputs, y label predictions and f1 score
+
+  :@param x_test: Test set images
+  :@param x_test: Test set labels
+  :@param model: CNN model
+  :@return metrics
+  '''
+  device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+  runtime, peak_mem, test_outputs = get_memory_usage_and_runtime(get_test_outputs, (x_test,model,))
+
+  if isinstance(test_outputs, tuple):
+      predictions, attention_weights = test_outputs
+  else:
+      predictions = test_outputs
+
+  y_pred = torch.argmax(predictions, dim=1).tolist()
+  accuracy = torch.sum(torch.tensor(y_pred).to(device) == y_test).item() / len(y_test)
+
+  precision, recall, f1_score, support = precision_recall_fscore_support(y_test.cpu().numpy(), y_pred)
+  average_f1_score = np.mean(f1_score)
+
+  return accuracy, runtime, peak_mem, test_outputs, y_pred, average_f1_score

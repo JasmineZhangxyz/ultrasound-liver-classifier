@@ -2,6 +2,7 @@
 import numpy as np
 from sklearn.utils import shuffle
 from imgaug import augmenters as iaa
+import imgaug as ia
 from sklearn.model_selection import train_test_split
 
 def augment_data(liver, non_liver, translation=True, rotation=True, cropping=True, noise=True, blurring=True, contrast=True):
@@ -68,7 +69,7 @@ def get_dataset(use_external=False, aug_data=False):
     :@return x_train, x_val, x_test, y_train, y_val, y_test numpy arrays
     '''
 
-    data_dict = np.load(data_path)
+    data_dict = np.load('./data/all_data.npz')
 
     liver = data_dict['liver']
     val_liver = data_dict['val_liver']
