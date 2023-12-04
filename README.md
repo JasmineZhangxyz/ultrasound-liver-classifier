@@ -19,7 +19,7 @@ To download the required dependencies,
 - Install dependencies with `pip install requirements.txt`
 
 Note that this project is highly reliant on using CUDA (GPU) - recommended.
-To download the data necessary for training and evaluating, download the .npz file from [here](https://drive.google.com/file/d/13zsG_NFNqz4I6AA0cOJTdWWsr4bWrBr3/view?usp=sharing) and upload it to `(this repository)/data/` folder. 
+To download the data necessary for training and evaluating, download the .npz file from the Google Drive Link Provided and upload it to `(this repository)/data/` folder. 
 
 ## Data
 
@@ -40,7 +40,8 @@ We performed translation, rotation, cropping, contrast, Gaussian noise - where t
 
 #### Files
 
-- `data_preprocessing.py`: defines a general function to load data, with the option of using external datasets and augmenting the data.  
+- `data_preprocessing.py`: defines a general function to load data, with the option of using external datasets and augmenting the data.
+- `create_all_data_npz.py`: shows how we created all_data.npz file that is used in each of the methods notebooks. We downloaded the Clarius transducer scans in zip files and extracted images from those zip files. We excluded forearms and ensured from the collected data that 4 patients were dedicated to training, 1 for validation, and 1 for test sets. 
 
 ## Methods
 
