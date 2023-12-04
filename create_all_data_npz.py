@@ -1,9 +1,7 @@
 import zipfile
-from concurrent.futures import ThreadPoolExecutor
 import io
 import numpy as np
 from PIL import Image, ImageOps
-from functools import partial
 import threading
 
 def process_single_image(zip_path, img_size, f, result, lock):
