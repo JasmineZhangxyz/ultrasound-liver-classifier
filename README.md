@@ -19,7 +19,7 @@ To download the required dependencies,
 - Install dependencies with `pip install requirements.txt`
 
 Note that this project is highly reliant on using CUDA (GPU) - recommended.
-To download the data necessary for training and evaluating, download the .npz file from the Google Drive Link Provided and upload it to `(this repository)/data/` folder. 
+To download the data necessary for training and evaluating, download the all_data.npz file from the Google Drive Link Provided and upload it to `(this repository)/data/` folder. 
 
 ## Data
 
@@ -49,10 +49,12 @@ We performed translation, rotation, cropping, contrast, Gaussian noise - where t
 - `Liver_CNN.ipynb`: Simple CNN with 2 Convolutional Layers (with ReLU activation, 2x2 Max-Pooling) with 3x3 kernel, 30% Dropout Layer, and 2 Fully-Connected Layers. We use an Adam optimizer and Cross Entropy Loss function for training. This Notebook also includes attention map visualizations to identify how the model recognizes liver features. 
 
 - the `/models` folder holds saved models for loading.
+    - Note that for the pre-trained models, we only saved resnet and googlenet due to GitHub space limitations.
 
-## Helper Functions
+## Metrics
 
 - `utility.py`: Defines helper functions for memory/runtime calculation, and metrics (AUC-ROC curve, confusion matrix plotting)
+- `Comparisons.ipynb`: Creates the overall AUC-ROC curve and accuracy/runtime heatmap for the augmented dataset for the SVM, CNN and AlexNet (best pre-trained model)
 
   
 
