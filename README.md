@@ -45,7 +45,7 @@ We performed translation, rotation, cropping, contrast, Gaussian noise - where t
 
 ## Methods
 
-- `Liver_SVM.ipynb`: 
+- `SVM.ipynb`: SVM with an RBF kernel. We first normalize the data and apply PCA (retain 70% of the variance) to reduce dimensionality before training our SVM model. 
 - `Liver_CNN.ipynb`: Simple CNN with 2 Convolutional Layers (with ReLU activation, 2x2 Max-Pooling) with 3x3 kernel, 30% Dropout Layer, and 2 Fully-Connected Layers. We use an Adam optimizer and Cross Entropy Loss function for training. This Notebook also includes attention map visualizations to identify how the model recognizes liver features. 
 
 - the `/models` folder holds saved models for loading.
