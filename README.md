@@ -4,7 +4,7 @@ This project performs liver detection for Clarius transducer ultrasound scans us
 
 ### Authors
 - Willis Guo ()
-- Sophie Lee ()
+- Sophie Lee ([@lee14334](https://github.com/lee14334]))
 - Allan Ma ()
 - Nicole Streltsov ([@NicStrel](https://github.com/NicoleStrel])) 
 - Jasmine Zhang ([@JasmineZhangxyz](https://github.com/JasmineZhangxyz))
@@ -47,6 +47,7 @@ We performed translation, rotation, cropping, contrast, Gaussian noise - where t
 
 - `SVM.ipynb`: SVM with an RBF kernel. We first normalize the data and apply PCA (retain 70% of the variance) to reduce dimensionality before training our SVM model. 
 - `Liver_CNN.ipynb`: Simple CNN with 2 Convolutional Layers (with ReLU activation, 2x2 Max-Pooling) with 3x3 kernel, 30% Dropout Layer, and 2 Fully-Connected Layers. We use an Adam optimizer and Cross Entropy Loss function for training. This Notebook also includes attention map visualizations to identify how the model recognizes liver features. 
+- `TransferLearning.ipynb`: 4 pre-trained models (ResNet-18, GoogLeNet, AlexNet, VGGNet-16) with frozen weights. A custom classification layer is added and trained for the purposes of transfer learning.
 
 - the `/models` folder holds saved models for loading.
     - Note that for the pre-trained models, we only saved resnet and googlenet due to GitHub space limitations.
