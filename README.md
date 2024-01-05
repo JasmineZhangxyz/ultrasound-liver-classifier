@@ -5,7 +5,7 @@ This project performs liver detection for Clarius transducer ultrasound scans us
 ### Authors
 - Willis Guo ()
 - Sophie Lee ([@lee14334](https://github.com/lee14334]))
-- Allan Ma ()
+- Allan Ma ([@allan-ma1](https://github.com/allan-ma1))
 - Nicole Streltsov ([@NicStrel](https://github.com/NicoleStrel])) 
 - Jasmine Zhang ([@JasmineZhangxyz](https://github.com/JasmineZhangxyz))
 
